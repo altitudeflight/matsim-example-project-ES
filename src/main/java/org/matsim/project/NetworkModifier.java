@@ -18,7 +18,11 @@ public class NetworkModifier { //UE05
         Network network = NetworkUtils.createNetwork();
         new MatsimNetworkReader(network).readFile(inputNetwork.toString());
 
-        network.getLinks().get(Id.createLinkId("6")).setCapacity(120); //link 6 now has super low capacity
+        //UE05: network.getLinks().get(Id.createLinkId("6")).setCapacity(120); //link 6 now has super low capacity
+
+        //UE06:
+
+        network.getLinks().get(Id.createLinkId("6")).setCapacity(1); //link 6 now has super low capacity
 
         new NetworkWriter(network).write(outputNetwork.toString());
 
